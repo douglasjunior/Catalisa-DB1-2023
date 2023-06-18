@@ -4,6 +4,7 @@ const server = express();
 
 const porta = 3000;
 
+server.use(express.json());
 
 server.get('/usuarios/:usuarioId/', (request, response) => {
 

@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start:mysql": "nodemon exemplo-mysql.js",
+    "start:sequelize": "nodemon exemplo-sequelize.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "mysql2": "^3.3.5",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "sequelize": "^6.32.1"
   }
 }
