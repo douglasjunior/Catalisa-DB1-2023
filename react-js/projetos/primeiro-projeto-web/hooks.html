@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script crossorigin src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+
+  <script crossorigin src="https://unpkg.com/create-react-class@15.7.0/create-react-class.js"></script>
+
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script>
+    const StepComponent = () => {
+      const [step, setStep] = React.useState(0);
+
+      const incrementStep = () => {
+        setStep(s => s += 1);
+      };
+
+      const decrementStep = () => {
+        setStep(s => s -= 1);
+      };
+
+      return React.createElement('div', null,
+        React.createElement('button', { onClick: incrementStep }, '+'),
+        React.createElement('span', null, step),
+        React.createElement('button', { onClick: decrementStep }, '-'),
+      );
+    };
+
+    const myStep = React.createElement(
+      StepComponent,
+      null,
+      null
+    );
+
+    const myDiv = React.createElement('div', null, 'Olá React!', myStep);
+
+    ReactDOM.render(myDiv, document.getElementById('root'));
+  </script>
+</body>
+
+</html>
